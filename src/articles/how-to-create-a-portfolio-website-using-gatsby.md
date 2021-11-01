@@ -36,4 +36,3 @@ You can do this by navigating to the project folder in the command line and then
 ```
 npm i gatsby-plugin-google-analytics gatsby-plugin-manifest gatsby-plugin-react-helmet gatsby-plugin-robots-txt gatsby-plugin-sitemap
 ```
-next
