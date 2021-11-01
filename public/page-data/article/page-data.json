@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-article-js",
+    "path": "/article/",
+    "result": {"data":{"markdownRemark":{"html":"<p>This is a simple contact page.</p>","frontmatter":{"title":"Contact page","date":"29.08.2021","sourceCode":null,"projectLink":"https://my-contact-page.netlify.app/"}}},"pageContext":{}},
+    "staticQueryHashes": []}

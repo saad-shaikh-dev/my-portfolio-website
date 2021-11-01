@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---cache-dev-404-page-js",
+    "path": "/dev-404-page/",
+    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/my-articles/how-to-create-a-portfolio-website-using-gatsby"},{"path":"/my-articles/how-to-create-an-api-that-extracts-data-from-websites"},{"path":"/404/"},{"path":"/404.html"},{"path":"/"},{"path":"/my-articles/"},{"path":"/my-projects/"}]}},"pageContext":{}},
+    "staticQueryHashes": []}
