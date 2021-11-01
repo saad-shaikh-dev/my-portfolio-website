@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-article-js",
-    "path": "/my-articles/how-to-create-a-portfolio-website-in-gatsby",
-    "result": {"data":{"markdownRemark":{"html":"<p>In this article I'm going to show you how to use Gatsby to create a personal portfolio website.</p>","frontmatter":{"title":"How to create a portfolio website in Gatsby","date":"31.10.2021","sourceCode":null,"projectLink":"https://saad-shaikh-portfolio.netlify.app/"}}},"pageContext":{"slug":"how-to-create-a-portfolio-website-in-gatsby"}},
-    "staticQueryHashes": []}
