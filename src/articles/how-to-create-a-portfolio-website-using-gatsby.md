@@ -2,7 +2,7 @@
 title: How to create a portfolio website using Gatsby
 date: 31.10.2021
 slug: how-to-create-a-portfolio-website-using-gatsby
-sourceCode: 
+sourceCode: https://gitlab.com/saad.shaikh/contacts-app/-/tree/master
 projectLink: https://saad-shaikh-portfolio.netlify.app/
 ---
 
@@ -373,6 +373,7 @@ const the404Page = () => {
 
 export default the404Page
 ```
+---
+And now you have your own portfolio website! Make sure to update it any time you have completed a new project or have a new article you have written.
 
-### 
-(to be completed..)
+Cheers.
