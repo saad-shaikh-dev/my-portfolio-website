@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://saad-shaikh-portfolio.netlify.app/sitemap.xml
-Host: https://saad-shaikh-portfolio.netlify.app
