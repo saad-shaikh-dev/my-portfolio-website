@@ -16,8 +16,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar */ "./src/components/Navbar.js");
-/* harmony import */ var _styles_all_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/all.css */ "./src/styles/all.css");
-/* harmony import */ var _styles_all_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_all_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _all_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../all.css */ "./src/all.css");
+/* harmony import */ var _all_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_all_css__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -104,10 +104,10 @@ const the404Page = () => {
 
 /***/ }),
 
-/***/ "./src/styles/all.css":
-/*!****************************!*\
-  !*** ./src/styles/all.css ***!
-  \****************************/
+/***/ "./src/all.css":
+/*!*********************!*\
+  !*** ./src/all.css ***!
+  \*********************/
 /***/ (() => {
 
 

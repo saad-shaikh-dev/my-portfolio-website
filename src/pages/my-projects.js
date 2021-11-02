@@ -45,7 +45,6 @@ export const query = graphql`
     ) {
       nodes {
         frontmatter {
-          slug
           stack
           title
           image

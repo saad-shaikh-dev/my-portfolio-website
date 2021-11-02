@@ -112,9 +112,16 @@ The home page, projects list page and articles list page will be in the "pages" 
 In the "pages" folder, let's create the files "my-projects.js", "my-articles.js" and "404.js". The preixisting "index.js" file will be used as the home page.
 Now, create a folder in "src" called "templates" and then create a file inside it called "articles.js".
 
-Before we create the pages, we'll create a css file to store all the styles:
-You can find and copy the CSS code from here: 
+Before we create the pages, we have to create a the layout component with the navbar and the css file to store all the styles.
+
+You can find and copy the CSS code from here: [https://gitlab.com/saad.shaikh/my-portfolio-website/-/blob/master/src/all.css](https://gitlab.com/saad.shaikh/my-portfolio-website/-/blob/master/src/all.css).
+
+In the "components" folder, create 2 files, "Layout.js" and "Navbar.js".
+
+
 
 Now we can start filling up these pages.
 
 #### 1. index.js page:
+
+(to be completed..)
