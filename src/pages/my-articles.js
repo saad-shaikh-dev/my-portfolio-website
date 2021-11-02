@@ -21,7 +21,7 @@ const Articles = ({ data }) => {
               <Link to={article.frontmatter.slug}>
                 <div className="list-card">
                   <h4 className="two-lines">{article.frontmatter.title}</h4>
-                  <p>Date: {article.frontmatter.date}</p>
+                  <p>Date: {article.frontmatter.date.substr(8, 2)}.{article.frontmatter.date.substr(5, 2)}.{article.frontmatter.date.substr(0, 4)}</p>
                 </div>
               </Link>
             </Fragment>

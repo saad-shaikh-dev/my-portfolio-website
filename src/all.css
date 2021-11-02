@@ -60,6 +60,9 @@ hr {
 .bold {
   font-weight: bold;
 }
+.text-left {
+  text-align: left;
+}
 .two-lines {
   height: 45px;
 }
@@ -74,13 +77,14 @@ hr {
   border-bottom: 3px solid var(--main-color);
   position: fixed;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   top: 0px;
   left: 0px;
-  width: 100%;
   z-index: 1;
   height: 70px;
+  width: 100vw;
 }
 .navbar h1,
 .navbar a {
@@ -227,7 +231,6 @@ hr {
     transition-duration: 400ms;
   }
   .navbar {
-    flex-direction: column;
     height: 100px;
     transition-duration: 400ms;
   }

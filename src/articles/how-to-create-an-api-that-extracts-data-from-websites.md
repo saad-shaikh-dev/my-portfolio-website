@@ -1,6 +1,6 @@
 ---
 title: How to create an API that extracts data from websites
-date: 22.10.2021
+date: 2021.10.22
 slug: how-to-create-an-api-that-extracts-data-from-websites
 sourceCode: https://gitlab.com/saad.shaikh/renewable-energy-news-api
 projectLink: https://renewable-energy-news-api.herokuapp.com/

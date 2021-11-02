@@ -1,6 +1,6 @@
 ---
 title: How to create a portfolio website using Gatsby
-date: 31.10.2021
+date: 2021.10.31
 slug: how-to-create-a-portfolio-website-using-gatsby
 sourceCode: https://gitlab.com/saad.shaikh/contacts-app/-/tree/master
 projectLink: https://saad-shaikh-portfolio.netlify.app/
@@ -105,11 +105,39 @@ Add configure the plugins in the plugins section:
       },
     },
 ```
-The last two plugin shown above will connect the project to the two databases we will create to store the projects and articles. I will name them "my-projects" and "articles" respectively.
+The last two plugin shown above will connect the project to the two databases we will create to store the projects and articles. I will name them "projects-list" and "articles" respectively.
 
 
 ### Create the database folders
-This website will have 2 databases, one for the projects and one for the articles. So create two folder, one called "my-projects" and the other called "articles".
+This website will have 2 databases, one for the projects and one for the articles. So create two folder, one called "projects-list" and the other called "articles".
+Each data will be stored in a markdown (.md) file. The data properties will be contained between two lines containing "---" each. Below that you can write you content using the markdown syntax, which will be extracted and converted into HTML.
+
+Now let's add some dummy data so that you will see how it looks like when we get to the front end.
+#### "projects-list" folder
+The projects database will contain the properties title, stack, image, projectLink and description. Create a file called "[project-name].md" and enter the properties like below:
+```
+---
+title: [title of project]
+stack: [list of stacks that are used for the project]
+image: [link to project thumbnail image]
+projectLink: [link to deployed project]
+description: [a brief description about the project]
+---
+```
+#### "articles" folder
+The projects database will contain the properties title, date, slug, sourceCode and projectLink. Create a file called "[article-name].md" and enter the properties like below:
+```
+---
+title: [title of article]
+date: [publishing date]
+slug: [slug of article]
+sourceCode: [link to project source code if the article is about a project]
+projectLink: [link to deployed project if the article is about a project]
+---
+```
+Below that, you can write the actual article in markdown format. This will automatically be converted into HTMl in the frontend.
+
+Refer to [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/) to learn about markdown syntax.
 
 ### Create the pages
 After that, we will create all the pages in the website that viewers will interact with.
