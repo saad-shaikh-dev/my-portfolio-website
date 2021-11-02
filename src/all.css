@@ -124,11 +124,12 @@ hr {
 .home-header-images{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 }
 .home-header-image{
-  width: 40%;
-  margin: 1em;
+  width: 30%;
+  margin: .5em;
 }
 .button-link {
   text-decoration: none;
