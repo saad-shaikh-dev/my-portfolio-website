@@ -12,7 +12,7 @@ const Article = ({ data }) => {
         <meta charSet="utf-8" />
         <title>{post.frontmatter.title} - Saad Shaikh</title>
       </Helmet>
-      <div>
+      <div className="article-page">
         <h2 className="center-text">{post.frontmatter.title}</h2>
         <p className="small bold">Date: {post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

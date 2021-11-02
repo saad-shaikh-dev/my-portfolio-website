@@ -45,7 +45,7 @@ Add some information in the siteMetada section:
 siteUrl: "[actual url of website]",
     title: "[name of the website]",
 ```
-Add configure the plugins in the plugins section"
+Add configure the plugins in the plugins section:
 ```
     {
       resolve: "gatsby-plugin-google-analytics",
@@ -90,8 +90,26 @@ Add configure the plugins in the plugins section"
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects-list`,
+        path: `${__dirname}/src/projects-list/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/src/articles/`,
+      },
+    },
 ```
-There is more to be added to the plugins section but we will add it later so it will be easier for you to understand the function of those two plugins.
+The last two plugin shown above will connect the project to the two databases we will create to store the projects and articles. I will name them "my-projects" and "articles" respectively.
+
+
+### Create the database folders
+This website will have 2 databases, one for the projects and one for the articles. So create two folder, one called "my-projects" and the other called "articles".
 
 ### Create the pages
 After that, we will create all the pages in the website that viewers will interact with.
@@ -118,10 +136,243 @@ You can find and copy the CSS code from here: [https://gitlab.com/saad.shaikh/my
 
 In the "components" folder, create 2 files, "Layout.js" and "Navbar.js".
 
+In Layout.js, enter the below code:
+```
+import React from "react"
+import Navbar from "./Navbar"
+import "../all.css"
 
+const Layout = ({ children }) => {
+    return (
+        <div className="layout">
+            <Navbar />
+            <div className="main">{children}</div>
+            <br />
+            <footer className="footer">
+                <p>I'm available for hire. You can contact me at <a className="link" href="mailto:saad.shaikh.dev@protonmail.com">saad.shaikh.dev@protonmail.com</a>.</p>
+                <p>
+                    This website was made by Saad Shaikh - Copyright 2021 Saad
+                    Shaikh
+                </p>
+            </footer>
+        </div>
+    )
+}
+
+export default Layout
+```
+Then create the Navbar.js file and add all the links to the pages:
+```
+import React from 'react'
+import { Link } from "gatsby"
+
+const Navbar = () => {
+    return (
+        <nav className="navbar">
+            <h1><Link to="/">Saad Shaikh</Link></h1>
+            <div className="navlinks" id="menu">
+                <Link to="/">Home</Link>
+                <Link to="/my-projects">My Projects</Link>
+                <Link to="/my-articles">My Articles</Link>
+            </div>
+        </nav>
+    )
+}
+
+export default Navbar
+```
 
 Now we can start filling up these pages.
 
 #### 1. index.js page:
+Import the Helmet and Link plugins as well as the Layout.js component.
+We will be importing the Layout.js component in all the pages to wrap it around the page content.
+We will also use Helmet on each page to create their individual page titles.
+```
+import { Link } from "gatsby"
+import React from "react"
+import Layout from "../components/Layout"
+import { Helmet } from "react-helmet"
 
+const Home = () => {
+
+  return (
+    <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home - Saad Shaikh</title>
+        <meta name="description" content="Free Web tutorials" />
+      </Helmet>
+      <div className="home">
+        <div className="home-header">
+          <h2>Frontend & Backend web developer</h2>
+          <p>Hello and welcome to my website.</p>
+          <p>I am a web developer specialising in React JS, Gatsby, PostgreSQL and ASP.NET Core.</p>
+          <p>Feel free to check out my portfolio.</p>
+          <br />
+          <Link className="button-link" to="/my-projects">My Portfolio</Link>
+        </div>
+        <div className="home-header-images">
+          <img className="home-header-image" src="/gatsby-logo.png" alt="Gatsby logo" />
+          <img className="home-header-image" src="/javascript-logo.png" alt="Javascript logo" />
+          <img className="home-header-image" src="/postgres-logo.png" alt="Postgres logo" />
+          <img className="home-header-image" src="/react-logo.png" alt="React JS logo" />
+          <img className="home-header-image" src="/asp.net-core-logo.png" alt="ASP.NET Core logo" />
+        </div>
+      </div>
+    </Layout>
+  )
+}
+
+export default Home;
+
+```
+#### 2. my-projects.js page:
+Import the plugins Fragement and Link from React JS, Helmet from Gatsby, graphql for the database management and the Layout.js component.
+
+Then, in the bottom, create a function to get the data from the "projects-list" folder.
+
+Lastly, inside of "Return ()", create the inteface that will use the data and provide a list of all the projects. The syntax for this is exactly the same as regular React JS.
+```
+import React, { Fragment } from "react"
+import { graphql, Link } from "gatsby"
+import Layout from "../components/Layout"
+import { Helmet } from "react-helmet"
+
+const Projects = ({ data }) => {
+  const projects = data.projects.nodes
+
+  return (
+    <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>My Projects - Saad Shaikh</title>
+      </Helmet>
+      <div className="list-page">
+        <h2>My Portfolio</h2>
+        <h3>Projects & websites that I have created.</h3>
+        <div className="list">
+          {projects.map(project => (
+            <Fragment key={project.id}>
+              <Link to={project.frontmatter.projectLink} target="_blank">
+                <div className="list-card">
+                  <h4>{project.frontmatter.title}</h4>
+                  <img className="thumbnail" src={project.frontmatter.image} alt={project.frontmatter.title + " image"} />
+                  <p className="tools">Tools: {project.frontmatter.stack}</p>
+                  <p className="two-lines">{project.frontmatter.description}</p>
+                </div>
+              </Link>
+            </Fragment>
+          ))}
+        </div>
+      </div>
+    </Layout>
+  )
+}
+
+export default Projects
+
+export const query = graphql`
+  query ProjectsPage {
+    projects: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(projects-list)/"  }},
+      sort: { fields: frontmatter___title, order: ASC }
+    ) {
+      nodes {
+        frontmatter {
+          stack
+          title
+          image
+          projectLink
+          description
+        }
+        id
+      }
+    }
+  }
+`
+```
+#### 3. my-articles.js page:
+Import the plugins Fragement and Link from React JS, Helmet from Gatsby, graphql for the database management and the Layout.js component.
+
+Then, in the bottom, create a function to get the data from the "articles" folder.
+
+And then, just like in the "my-projects.js" file, create the inteface inside of "Return ()" that will use the data and provide a list of all the articles.
+```
+import React, { Fragment } from "react"
+import { graphql, Link } from "gatsby"
+import Layout from "../components/Layout"
+import { Helmet } from "react-helmet"
+
+const Articles = ({ data }) => {
+  console.log(data)
+  const articles = data.articles.nodes
+
+  return (
+    <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>My Articles - Saad Shaikh</title>
+      </Helmet>
+      <div className="list-page">
+        <h2>My Articles</h2>
+        <div className="list">
+          {articles.map(article => (
+            <Fragment key={article.id}>
+              <Link to={article.frontmatter.slug}>
+                <div className="list-card">
+                  <h4 className="two-lines">{article.frontmatter.title}</h4>
+                  <p>Date: {article.frontmatter.date}</p>
+                </div>
+              </Link>
+            </Fragment>
+          ))}
+        </div>
+      </div>
+    </Layout>
+  )
+}
+
+export default Articles
+
+export const query = graphql`
+  query ArticlesPage {
+    articles: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(articles)/"  }},
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          date
+          slug
+          projectLink
+        }
+        id
+      }
+    }
+  }
+`
+```
+#### 4. 404.js page:
+This is the simplest page. You only need to provide two lines of information and increase the font size via CSS.
+```
+import React from 'react'
+import Layout from '../components/Layout'
+
+const the404Page = () => {
+  return (
+    <Layout>
+      <div className="four-o-four">
+        <strong>404 error</strong>
+        <p>Sorry, this page does not exist.</p>
+      </div>
+    </Layout>
+  )
+}
+
+export default the404Page
+```
+
+### 
 (to be completed..)

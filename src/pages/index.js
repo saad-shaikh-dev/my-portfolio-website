@@ -3,8 +3,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { Helmet } from "react-helmet"
 
-const Home = ({ data }) => {
-  console.log(data)
+const Home = () => {
 
   return (
     <Layout>

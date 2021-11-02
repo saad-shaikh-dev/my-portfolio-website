@@ -8,13 +8,14 @@ body {
   font-family: "Montserrat", sans-serif;
   text-align: justify;
   margin-top: 70px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0px;
-  padding: 1em 5em;
+  padding: 1em;
   background-color: var(--light-color);
   color: var(--dark-color);
   font-size: 16px;
+  width: 90%;
 }
 ::selection {
   background: var(--main-color);
@@ -128,7 +129,7 @@ hr {
   justify-content: center;
 }
 .home-header-image{
-  width: 30%;
+  width: 150px;
   margin: .5em;
 }
 .button-link {
@@ -193,6 +194,26 @@ hr {
 }
 .link:hover {
   color: var(--secondary-color);
+}
+
+.article-page {
+  width: clamp(300px,900px,95%);
+  margin: auto;
+}
+
+.four-o-four {
+  display: grid;
+  justify-content: center;
+  margin: 4em;
+}
+.four-o-four strong, .four-o-four p {
+  text-align: center;
+}
+.four-o-four strong {
+  font-size: 4em;
+}
+.four-o-four p {
+  font-size: 2em;
 }
 
 .footer {

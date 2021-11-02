@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 const the404Page = () => {
   return (
     <Layout>
-      <div>
+      <div className="four-o-four">
         <strong>404 error</strong>
         <p>Sorry, this page does not exist.</p>
       </div>
