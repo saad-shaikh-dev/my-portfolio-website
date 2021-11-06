@@ -3,8 +3,9 @@ title: Calculator
 stack: HTML5 and CSS3
 slug: calculator
 image: calculator-app-image.png
+sourceCode: https://gitlab.com/saad.shaikh/calculator
 projectLink: https://my-calculator-application.netlify.app/
-description: A calculator app that automatically shows and updates results as you type
+description: A calculator app that automatically shows and updates results as you type.
 ---
 
 ## Calculator

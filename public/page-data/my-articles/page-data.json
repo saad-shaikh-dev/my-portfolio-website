@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-my-articles-js",
+    "path": "/my-articles/",
+    "result": {"data":{"articles":{"nodes":[{"frontmatter":{"title":"How to create a portfolio website using Gatsby","date":"2021.10.31","slug":"how-to-create-a-portfolio-website-using-gatsby","projectLink":"https://saad-shaikh-portfolio.netlify.app/"},"id":"581c7e84-0f86-5722-8d1c-39faed73ad67"},{"frontmatter":{"title":"How to create an API that extracts data from websites","date":"2021.10.22","slug":"how-to-create-an-api-that-extracts-data-from-websites","projectLink":"https://renewable-energy-news-api.herokuapp.com/"},"id":"4bbce67f-f2b4-5065-a0ea-9a5398ad66c3"}]}},"pageContext":{}},
+    "staticQueryHashes": []}

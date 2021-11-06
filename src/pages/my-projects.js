@@ -20,10 +20,11 @@ const Projects = ({ data }) => {
           {projects.map(project => (
             <Fragment key={project.id}>
               <Link to={project.frontmatter.projectLink} target="_blank">
-                <div className="list-card">
+                <div className="list-card text-left">
                   <h4>{project.frontmatter.title}</h4>
                   <img className="thumbnail" src={project.frontmatter.image} alt={project.frontmatter.title + " image"} />
-                  <p className="tools">Tools: {project.frontmatter.stack}</p>
+                  <p><strong>Tools:</strong> <em>{project.frontmatter.stack}</em></p>
+                  <p className="two-lines"><strong>Code:</strong> <span className="link">{project.frontmatter.sourceCode}</span></p>
                   <p className="two-lines">{project.frontmatter.description}</p>
                 </div>
               </Link>
@@ -50,6 +51,7 @@ export const query = graphql`
           image
           projectLink
           description
+          sourceCode
         }
         id
       }

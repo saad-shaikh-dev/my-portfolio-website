@@ -4,6 +4,7 @@
   --dark-color: #444;
   --light-color: #fafafa;
 }
+@import url('https://fonts.googleapis.com/css2?family=Literata&family=Montserrat&display=swap');
 body {
   font-family: "Montserrat", sans-serif;
   text-align: justify;
@@ -64,7 +65,7 @@ hr {
   text-align: left;
 }
 .two-lines {
-  height: 45px;
+  height: 40px;
 }
 
 .navbar {
@@ -181,6 +182,9 @@ hr {
   border-bottom: 2px solid var(--main-color);
   padding-bottom: 0.5em;
 }
+.list-card p {
+  line-height: 1.25em;
+}
 .list-card:hover {
   box-shadow: 0 0 0.5em var(--secondary-color);
   transition-duration: 400ms;
@@ -190,9 +194,7 @@ hr {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-.tools {
-  font-style: italic;
+  padding: .1em;
 }
 .link {
   color: var(--main-color);
