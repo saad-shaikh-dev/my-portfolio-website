@@ -24,7 +24,7 @@ const Projects = ({ data }) => {
                   <h4>{project.frontmatter.title}</h4>
                   <img className="thumbnail" src={project.frontmatter.image} alt={project.frontmatter.title + " image"} />
                   <p><strong>Tools:</strong> <em>{project.frontmatter.stack}</em></p>
-                  <p className="two-lines"><strong>Code:</strong> <span className="link">{project.frontmatter.sourceCode}</span></p>
+                  <p className="two-lines"><strong>Code:</strong> <a className="link" href={project.frontmatter.sourceCode} target="_blank">{project.frontmatter.sourceCode}</a></p>
                   <p className="two-lines">{project.frontmatter.description}</p>
                 </div>
               </Link>
