@@ -24,7 +24,7 @@ const Home = () => {
         <div className="home-header-images">
           <img className="home-header-image" src="/gatsby-logo.png" alt="Gatsby logo" />
           <img className="home-header-image" src="/javascript-logo.png" alt="Javascript logo" />
-          <img className="home-header-image" src="/postgres-logo.png" alt="Postgres logo" />
+          <img className="home-header-image" loading="lazy" src="/postgres-logo.png" alt="Postgres logo" />
           <img className="home-header-image" src="/react-logo.png" alt="React JS logo" />
           <img className="home-header-image" src="/asp.net-core-logo.png" alt="ASP.NET Core logo" />
         </div>
